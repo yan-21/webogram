@@ -14,11 +14,11 @@ jobs:
     - name: list image
       run: docker images
     - name: Log in to Docker Hub
-        uses: docker/login-action@v1
-        if: ${{ github.ref_type == 'tag' }}
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+      uses: docker/login-action@v1
+      if: ${{ github.ref_type == 'tag' }}
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
     - name: push image
       run: docker push yanuar21/webogram
       
