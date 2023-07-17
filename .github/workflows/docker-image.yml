@@ -19,7 +19,7 @@ jobs:
           ./Dockerfile
           
     - name: push image to registry
-      uses: docker://alpine:3.8
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         image: ${{ steps.build-image.outputs.mage }}
         tags: ${{ steps.build-image.outputs.tags }}
