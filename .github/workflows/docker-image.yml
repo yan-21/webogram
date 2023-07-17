@@ -12,7 +12,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag webogram:$(date +%s)
     - name: Publish to Registry
-      uses: actions/push-to-registry@v3
+      uses: yan-21/webogram@v3
       with:
         image: ${{ steps.build-image.outputs.image }}
         tags: ${{ steps.build-image.outputs.tags }}
