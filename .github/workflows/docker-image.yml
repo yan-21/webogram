@@ -12,4 +12,8 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag yanuar21/webogram:latest
     - name: Publish to Registry
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+        repository: rashidmd/vampi_docker:latest
       run: docker push yanuar21/webogram
