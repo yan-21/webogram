@@ -6,7 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Publish to Registry
-      uses: yanuar21/webogram
+      uses: yanuar21/webogram@v1
       with:
         name: yanuar21/webogram
         username: ${{ secrets.DOCKER_USERNAME }}
