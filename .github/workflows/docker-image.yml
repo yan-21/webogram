@@ -10,14 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      id: build-image
-      uses: actions/checkout@v3
-      with:
-        image: yanuar21/webogram
-        tags: latest
-        dockerfiles: |
-          ./Dockerfile
-          
+      run: docker build . --file Dockerfile --tag yanuar21/webogram
     - name: list image
       run: docker images
       
